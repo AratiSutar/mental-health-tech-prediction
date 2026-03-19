@@ -1,19 +1,18 @@
 # Mental Health in Tech — Prediction Model
 
 ## Business Problem
-Tech companies struggle to identify employees
-who need mental health support. This model
-predicts which workers are likely to seek
-treatment so HR can take proactive action.
+Tech companies struggle to identify employees who need mental health support.
+This model predicts which workers are likely to seek treatment so HR can
+provide proactive support before crisis hits.
 
 ## Dataset
-- Source: Kaggle — Mental Health in Tech Survey
-- 1259 tech workers
-- 24 raw features + 5 engineered
-- Target: treatment (Yes/No)
-- 58.6% sought treatment
+- Source: [Kaggle — Mental Health in Tech Survey]((https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey))
+- 1259 tech workers surveyed
+- 24 raw features + 5 engineered features
+- Target: treatment (Yes=1 / No=0)
+- 58.6% of workers sought treatment
 
-## Steps Followed
+## Project Steps
 1. Load and explore data
 2. EDA — found key patterns
 3. Clean data (age, gender, missing values)
@@ -24,16 +23,15 @@ treatment so HR can take proactive action.
 8. Overfitting check
 9. Tuned XGBoost with GridSearchCV
 10. Final evaluation
-11. Predicted new employee profiles
 
 ## Feature Engineering
 | Feature | Description |
 |---|---|
-| Company_Support_Score | 5 support columns combined |
-| Openness_Score | 5 openness columns combined |
-| Risk_Level | family_history + work_interfere |
-| Is_Small_Company | Company size (0 or 1) |
-| Age_Group | Young/Adult/Senior/Elder |
+| Company_Support_Score | Combines 5 company support columns |
+| Openness_Score | Combines 5 workplace openness columns |
+| Risk_Level | family_history + work_interfere combined |
+| Is_Small_Company | Company size simplified (0 or 1) |
+| Age_Group | Young / Adult / Senior / Elder |
 
 ## Model Comparison
 | Model | Accuracy | F1 | CV Mean |
@@ -56,22 +54,8 @@ treatment so HR can take proactive action.
 - CV Score: 74.8%
 
 ## Key Findings
-- work_interfere = strongest predictor
+- work_interfere is the strongest predictor
 - family_history doubles treatment likelihood
-- Company support reduces risk significantly
-- Random Forest overfit to 100% train accuracy!
-- XGBoost: only 1% train/test gap
-
-## Predictions
-| Employee | Result | Confidence |
-|---|---|---|
-| Junior Dev (supportive) | No Treatment | 87.4% |
-| Senior Dev (no support) | Needs Treatment | 85.3% |
-| Freelancer (high risk) | Needs Treatment | 77.6% |
-
-## Tools
-Python · Pandas · Scikit-learn · XGBoost ·
-Matplotlib · Seaborn · Google Colab
-
-Arati Sutar
-[LinkedIn]((https://www.linkedin.com/in/aratisutar/))
+- Company support score significantly reduces risk
+- Random Forest overfit badly (100% train accuracy!)
+- XGBoost best model with only 1% train/test gap
