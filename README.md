@@ -73,8 +73,5 @@ treatment so HR can take proactive action.
 Python · Pandas · Scikit-learn · XGBoost ·
 Matplotlib · Seaborn · Google Colab
 
-## Author
 Arati Sutar
-[LinkedIn]((https://www.linkedin.com/in/aratisutar/)) | [GitHub]((https://github.com/AratiSutar))
-**Your Name**
-[LinkedIn](your-link) | [GitHub](your-link)
+[LinkedIn]((https://www.linkedin.com/in/aratisutar/))
